@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #f3f3f3;
+}
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px rgb(7, 31, 241);
+  margin-bottom: -1em;
+}
+.box {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6em;
+}
+
+.shape1{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -50px;
+}
+.shape2 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  margin-top: -30px;
+  float: left;
+}
+.shape3 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  margin-top: -30px;
+  float: left;
+  margin-left: -31px;
+}
+.shape4 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  margin-top: -25px;
+  float: left;
+  margin-left: -32px;
+}
+.shape5 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -48px;
+  margin-left: -32px;
+  margin-top: -30px;
+}
+.shape6 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -20px;
+  margin-top: -35px;
+}
+.shape7 {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background-color: #0074d9;
+  border-radius: 80px;
+  float: left;
+  margin-right: -20px;
+  margin-top: -57px;
+}
+.float {
+  position: absolute;
+  z-index: 2;
+}
+
+.form {
+  margin-left: 145px;
+}
+
+/*In this part we will make the round shape 
+  of the face,and the basic structure of face
+      like add some color of face,height,width etc*/
+.face {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.face::before {
+  /*In this part we will make 
+      the mouth of the face*/
+  content: "";
+  position: absolute;
+  top: 120px;
+  width: 150px;
+  height: 70px;
+  background: red;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  transition: 0.5s;
+}
+.face:hover::before {
+  /*Here we will add the hover effects. 
+      Like when the cirser will came on the mouth the 
+      mouth will closed that means is radius
+      will be decreased*/
+  top: 120px;
+  width: 150px;
+  height: 20px;
+  background: red;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+/*In this part we will make
+  the eyes of the face*/
+.eyes {
+  position: relative;
+  top: -30px;
+  display: flex;
+}
+.eyes .eye {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: block;
+  background: #fff;
+  margin: 0 15px;
+  border-radius: 50%;
+}
+.eyes .eye::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
+}
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
