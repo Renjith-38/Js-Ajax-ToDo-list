@@ -23,19 +23,31 @@
           </div>
         </div>
       </nav>
+      <h1>Hwlloo</h1>
+      <form id="loginform"">
+      <input type="text" id="n1">
+      <input type="password" id="p1">
+      <input type="submit">
+      </form>
     
 </body>
 </html>
 <script>
-    var x,y,z;
+    var x = document.getElementById("n1");
+    var y = document.getElementById("p1");
+    document.getElementById("myForm").addEventListener("submit",function(square)
     function sum(multi){
-        x = 5;
-        y = 6;
-        z= x+y;
-        multi(z);
+       if(x.value == "1" && y.value == "1"){
+            multi();
+        }
+        else{
+          alert("Nope");
+          return false;
+        }
     }
 
-    function square(z){
-        console.log(z*z);
+    function square(){
+         window.location.href = '/index.html';
+        return false;
     }
 </script>
