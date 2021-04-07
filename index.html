@@ -30,7 +30,7 @@
                     <div class="shape6"></div>
                     <div class="shape7"></div>
                     <div class="float">
-                        <form class="form" action="/home.html" onsubmit="return validate(check)">
+                        <form class="form" onsubmit="validate(check)" id="login">
                             <div class="form-group">
                                 <label for="username" class="text-white">Username:</label><br>
                                 <input type="text" name="username" id="username" class="form-control" required>
@@ -73,6 +73,9 @@
               "rotate(" + rot + "deg)";
         });
     }
+    document.getElementById("login").addEventListener("submit", function(event){
+        event.preventDefault()
+    });
     function validate(myCallback){
         if((username.value == "admin") && (password.value == "12345")){
              myCallback();
@@ -81,13 +84,13 @@
             snackbar.className = "show";
             setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 2000);
             // alert("Nope");
-            return false;
+            // return false;
         }
     }
 
     function check(){
-            // window.location.href = '/home.html';
-            return true;
+            window.location.href = '/home.html';
+            // return true;
         }
 </script>
 
