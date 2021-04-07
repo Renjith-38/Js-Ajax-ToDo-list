@@ -33,11 +33,26 @@ function ajax(){
 }
 var tag = document.getElementsByTagName("input");
 function check(t){
-    var temp = document.getElementById(t);
-    if(temp.checked == true)
-        count++;
+var temp = document.getElementById(t);
+   var promise = new Promise(function(resolve,reject){
+        if(temp.checked == true)
+        resolve();
     else
+        reject();
+
+    })
+    
+    promise
+    .then(function(){
+        count++;
+        display();
+    })
+    .catch(function(){
         count--;
-    if(count == 5)
+        display();
+    })
+    function display(){
+        if(count == 5)
         alert("Congrats. 5 Tasks have been Successfully Completed");
+    }
 }
